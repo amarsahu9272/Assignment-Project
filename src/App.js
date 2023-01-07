@@ -1,25 +1,26 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
+import { Fragment } from 'react';
+import Header from './component/header/Header';
+import { Route, Routes } from 'react-router-dom'
+import Detail from './component/pages/Detail';
+import Refractor from './component/pages/Refractor';
+
 
 function App() {
   return (
-    <div className="App">
-      {/* <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header> */}
-      Hello World
-    </div>
+    <Fragment>
+      <div className='App'>
+        <Header />
+        <h1>you are at home page</h1>
+        <Routes>
+          <Route path='/' element={<App />} />
+          <Route path='/component/pages/Refractor' element={<Refractor />} />
+          <Route path='/component/pages/Detail' element={<Detail />} />
+        </Routes>
+      </div>
+    </Fragment>
+
   );
 }
 
