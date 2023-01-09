@@ -1,26 +1,20 @@
-// import logo from './logo.svg';
-import './App.css';
-import { Fragment } from 'react';
-import Header from './component/header/Header';
+import './App.css'
 import { Route, Routes } from 'react-router-dom'
-import Detail from './component/pages/Detail';
-import Refractor from './component/pages/Refractor';
+import Home from './component/Pages/Home'
+import Navbar from './component/header/Header'
+import Users from './component//Pages/User'
+
 
 
 function App() {
   return (
-    <Fragment>
-      <div className='App'>
-        <Header />
-        <h1>you are at home page</h1>
-        <Routes>
-          <Route path='/' element={<App />} />
-          <Route path='/component/pages/Refractor' element={<Refractor />} />
-          <Route path='/component/pages/Detail' element={<Detail />} />
-        </Routes>
-      </div>
-    </Fragment>
-
+    <div className="App">
+      <Navbar />
+      <Routes>
+        <Route path='/' element={<Home />}> Home </Route>
+        <Route path='/Users' element={<Users />}>UserDetail</Route>
+      </Routes>
+    </div>
   );
 }
 
